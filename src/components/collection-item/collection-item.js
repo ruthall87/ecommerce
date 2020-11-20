@@ -6,12 +6,9 @@ import { addItem } from '../../redux/cart/cart.actions';
 
 import './collection-item.scss';
 
+const CollectionItem = ({ item, addItem }) => {
+  const { name, price, imageUrl } = item;
 
-const CollectionItem = ({...otherItemProps }) => {
- 
-  console.log()
-  const { name, price, imageUrl,item } = otherItemProps;
-  console.log(otherItemProps)
   return (
     <div className='collection-item'>
       <div
@@ -23,7 +20,6 @@ const CollectionItem = ({...otherItemProps }) => {
       <div className='collection-footer'>
         <span className='name'>{name}</span>
         <span className='price'>{price}</span>
-        <span className='item'>{item}</span>
       </div>
       <CustomButton onClick={() => addItem(item)} inverted>
         Add to cart
