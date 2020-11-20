@@ -5,10 +5,13 @@ import CustomButton from '../custom-button/custom-button';
 import { addItem } from '../../redux/cart/cart.actions';
 
 import './collection-item.scss';
-const CollectionItem = ({ item, addItem }) => {
-  item = []
-  const { name, price, imageUrl } = item;
 
+
+const CollectionItem = ({...otherItemProps }) => {
+ 
+  console.log()
+  const { name, price, imageUrl,item } = otherItemProps;
+  console.log(otherItemProps)
   return (
     <div className='collection-item'>
       <div
